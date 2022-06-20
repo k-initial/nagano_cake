@@ -1,10 +1,15 @@
 class Admin::OrdersController < ApplicationController
-  def show
-  end
 
-  def update
-  end
-  
-  def index
-  end
+	def show
+		
+	end
+
+	def total(items_total_price)
+
+	end
+
+	def update
+	end
+
+ 
 end
