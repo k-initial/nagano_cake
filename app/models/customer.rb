@@ -8,6 +8,7 @@ class Customer < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :addresses, dependent: :destroy
   
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :first_name_kana, presence: true
