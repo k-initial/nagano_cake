@@ -1,0 +1,18 @@
+<<<<<<< HEAD
+=======
+<% @genres.each do |genre| %>
+<%= genre.name  %>
+<% end %>
+
+<%= image_tag @item.get_image(200,200) %>
+<%= @item.name %>
+<%= @item.introduction %>
+¥<%= @item.with_tax_price %>(税込)
+
+<%= form_with model: @cart_item, url: cart_items_path do |f| %>
+<%= f.hidden_field :item_id , :value => @item.id  %>
+<%= f.select :quantity , *[1..10] %>
+<%= f.submit "カートに入れる",class: "btn" %>
+<% end%>
+
+>>>>>>> origin/develop

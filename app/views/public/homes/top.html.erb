@@ -1,2 +1,9 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
+<% @genres.each do |genre| %>
+<%= genre.name %>
+<% end %>
+
+<% @items.each do |item| %>
+<%= image_tag item.get_image(80,80) %>
+<%= item.name %>
+<%= item.with_tax_price %>
+<% end %>
