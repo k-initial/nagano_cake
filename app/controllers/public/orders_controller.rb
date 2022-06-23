@@ -20,9 +20,7 @@ class Public::OrdersController < ApplicationController
   def confirmation
     @cart_items = current_customer.cart_items
     
-    @order = Order.new (
-      customer:current_customer,
-      payment_method: params[:order][:payment_method])
+    @order = Order.new(customer :current_customer,payment_method: params[:order][:payment_method])
     
     @order.total_payment = billing(@order)
     
