@@ -1,43 +1,40 @@
 <div class="container">
   <h2 class="my-5">マイページ</h2>
   <div class="row">
-    <p>登録者情報</p>
-    <p><%= link_to "編集する",edit_customers_path, class:"btn btn-success ml-5"%></p>
-    <table class="table">
+    <p>登録者情報</p><table class="table">
       <tbody>
         <tr>
           <td>氏名</td>
-          <td><%= full_name(@customer)%></td>
+          <td><%= first_name %></td>
+          <td><%= last_name %></td>
         </tr>
         <tr>
           <td>カナ</td>
-          <td><%= full_name_kana(@customer)%></td>
+          <td><%= first_name_kana %></td>
+          <td><%= last_name_kana %></td>
         </tr>
         <tr>
           <td>郵便番号</td>
-          <td><%= @customer.post_code%></td>
+          <td><%= post_code %></td>
         </tr>
         <tr>
           <td>住所</td>
-          <td><%= @customer.address%></td>
+          <td><%= address %></td>
         </tr>
         <tr>
           <td>電話番号</td>
-          <td><%= @customer.phone_number%></td>
+          <td><%= phone_number %></td>
         </tr>
         <tr>
           <td>メールアドレス</td>
-          <td><%= @customer.email%></td>
+          <td><%= email %></td>
         </tr>
       </tbody>
     </table>
-    <div class="mr-5">
-      <p>配送先</p>
-      <P><%= link_to "一覧を見る",address_path, class:"btn btn-primary"%></P>
-    </div>
     <div class="ml-5">
-      <p>注文履歴</p>
-      <p><%= link_to "一覧を見る", orders_path,class:"btn btn-primary"</p>
-    </div>
+      <p><%= link_to "編集する",edit_admin_customer_path, class:"btn btn-success"%></p>
+      <p><%= link_to "注文履歴一覧を見る",admin_orders_path, class:"btn btn-primary"%></p>
+      </div>
+      
   </div>
 </div>
