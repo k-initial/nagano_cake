@@ -35,6 +35,14 @@ class Customer < ApplicationRecord
   has_many :addresses, dependent: :destroy
   
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :first_name_kana, presence: true
+  validates :last_name_kana, presence: true 
+  validates :post_code, presence: true
+  validates :address, presence: true
+  validates :phone_number, presence: true
+  validates :email, uniqueness: true
   
   def self.search_for(content,method)
     return none if content.blank?
