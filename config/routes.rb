@@ -2,12 +2,20 @@ Rails.application.routes.draw do
   
   devise_for :admins, controllers: {
   sessions: "admin/sessions"
+<<<<<<< HEAD
 }
   
   devise_for :customers,controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'
 }
+=======
+  }
+  devise_for :customers,controllers: {
+  registrations: "public/registrations",
+  sessions: 'public/sessions'
+  }
+>>>>>>> origin/develop
   
   scope module: :public do
     root to: 'homes#top'
