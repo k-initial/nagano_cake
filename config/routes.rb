@@ -2,11 +2,20 @@ Rails.application.routes.draw do
   
   devise_for :admins, controllers: {
   sessions: "admin/sessions"
+<<<<<<< HEAD
+}
+  
+  devise_for :customers,controllers: {
+  registrations: "public/registrations",
+  sessions: 'public/sessions'
+}
+=======
   }
   devise_for :customers,controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'
   }
+>>>>>>> origin/develop
   
   scope module: :public do
     root to: 'homes#top'
@@ -15,13 +24,11 @@ Rails.application.routes.draw do
     get 'customers/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'
     resources :customers, only: [:show,:edit,:update]
     patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw'
-    
     get 'orders/confirmation' => 'orders#confirmation', as: 'confirmation'
     get 'orders/complete' => 'orders#complete', as: 'complete'
     resources :orders, only: [:new,:create,:index,:show]
-    
-    resources :cart_items, only: [:index,:update,:destroy,:create]
     delete 'cart_items/all_destroy' => 'cart_items#all_destroy', as: 'all_destroy'
+    resources :cart_items, only: [:index,:update,:destroy,:create]
     resources :items, only: [:index,:show]
   end
   
