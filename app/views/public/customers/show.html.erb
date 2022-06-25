@@ -5,36 +5,32 @@
       <tbody>
         <tr>
           <td>氏名</td>
-          <td><%= first_name %></td>
-          <td><%= last_name %></td>
+          <td><%= @customer.first_name %></td>
+          <td><%= @customer.last_name %></td>
         </tr>
         <tr>
           <td>カナ</td>
-          <td><%= first_name_kana %></td>
-          <td><%= last_name_kana %></td>
+          <td><%= @customer.first_name_kana %></td>
+          <td><%= @customer.last_name_kana %></td>
         </tr>
         <tr>
           <td>郵便番号</td>
-          <td><%= post_code %></td>
+          <td><%= @customer.post_code %></td>
         </tr>
         <tr>
           <td>住所</td>
-          <td><%= address %></td>
+          <td><%= @customer.address %></td>
         </tr>
         <tr>
           <td>電話番号</td>
-          <td><%= phone_number %></td>
+          <td><%= @customer.phone_number %></td>
         </tr>
         <tr>
           <td>メールアドレス</td>
-          <td><%= email %></td>
+          <td><%= @customer.email %></td>
         </tr>
       </tbody>
     </table>
-    <div class="mr-5">
-      <p>配送先</p>
-      <P></P>
-    </div>
     <div class="ml-5">
       <p>注文履歴</p>
       <p><%= link_to "一覧を見る", orders_path,class:"btn btn-primary"%></p>
