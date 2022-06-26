@@ -1,6 +1,6 @@
 class Public::CartItemsController < ApplicationController
   
-  before_action :authenticate_customer!
+   before_action :authenticate_customer!
   # devise使用の際に使う(current_customer)
   def index
     @cart_items = current_customer.cart_items
