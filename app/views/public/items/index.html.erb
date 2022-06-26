@@ -1,11 +1,19 @@
-<% @genres.each do |genre| %>
-<%= genre.name  %>
-<% end %>
-
-<% @items.each do |item| %>
-<%= link_to item_path(item) do %>
-<%= image_tag item.get_image(100,100) %>
-<%= item.name %>
-<% end %>
-<%= item.with_tax_price%>
-<% end %>
+<div class="container mt-5">
+ 
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex flex-wrap justify-content-around">
+        <% @items.each do |item| %>
+          <%= link_to item_path(item), class:"card mb-3 shadow", style:"padding: 0; height:250px; width: 260px" do %>
+            <%= image_tag item.get_image(200,200), class:"card-img-top", alt:"Card-image", style:"height:150px; width:auto; object-fit: cover" %>
+            <div class="card-body" style="color:black; background-color:pink">
+              <h5 class="card-title" style=" overflow: scroll; max-width:240px"><%= item.name %></h5>
+              <!--<p class="card-text" style=" overflow: scroll; max-width:160px"><%= item.introduction %></p>-->
+              <p class="card-text">¥<%= item.with_tax_price %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

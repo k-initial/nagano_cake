@@ -1,5 +1,5 @@
 class Admin::ItemsController < ApplicationController
-   before_action :authenticate_customer!
+  # before_action :authenticate_customer!
   def index
     @items = Item.all
   end
