@@ -1,9 +1,30 @@
-<% @genres.each do |genre| %>
-<%= genre.name %>
-<% end %>
 
-<% @items.each do |item| %>
-<%= image_tag item.get_image(80,80) %>
-<%= item.name %>
-<%= item.with_tax_price %>
-<% end %>
+    <div class="top-visual">
+      <div><%= image_tag "top.jpg", class: "top-visual_image" %>
+      <p class="top-visual_content">
+        ようこそながのCAKEへ！　<br>
+        このサイトは、ケーキ販売のECサイトになります。　<br>
+        会員ではない方も商品の閲覧はできますが、 <br>
+        購入には会員登録が必要になります。 <br>
+      </p>
+      </div>
+    </div>
+<div class="container mt-5">
+ 
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex flex-wrap justify-content-around">
+        <% @items.each do |item| %>
+          <%= link_to item_path(item), class:"card mb-3 shadow", style:"padding: 0; height:250px; width: 260px" do %>
+            <%= image_tag item.get_image(200,200), class:"card-img-top", alt:"Card-image", style:"height:150px; width:auto; object-fit: cover" %>
+            <div class="card-body" style="color:black; background-color:pink">
+              <h5 class="card-title" style=" overflow: scroll; max-width:240px"><%= item.name %></h5>
+              <!--<p class="card-text" style=" overflow: scroll; max-width:160px"><%= item.introduction %></p>-->
+              <p class="card-text">¥<%= item.with_tax_price %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
