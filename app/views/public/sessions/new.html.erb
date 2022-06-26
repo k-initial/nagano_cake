@@ -3,7 +3,6 @@
 <div class="container">
    <h4>ログイン</h4>
     <h6 class="customer-sign_in">会員の方はこちらからログイン</h6>
-  <form>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-group row">
       <label class="col-sm-2">
@@ -25,5 +24,4 @@
         <%= f.submit "  ログイン  ",class: "btn btn-primary" %>
       </div>
     <% end %>
-  </form>
 </div>
