@@ -22,7 +22,9 @@ class Public::OrdersController < ApplicationController
     @cart_items = current_customer.cart_items
     
     @order = Order.new(customer: current_customer,payment_method: params[:order][:payment_method])
-    @total = @cart_items.sum(&:subtotal) # 商品合計
+
+    @total = @cart_items.sum(&:subtotal)
+
     @order.total_payment = @total + 800
     
     if params[:order][:my_address] == "1"
