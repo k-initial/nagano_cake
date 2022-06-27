@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     get 'customers/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'
     resources :customers, only: [:show,:edit,:update]
     patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw'
-    get 'orders/confirmation' => 'orders#confirmation', as: 'confirmation'
+    post 'orders/confirmation' => 'orders#confirmation', as: 'confirmation'
     get 'orders/complete' => 'orders#complete', as: 'complete'
     resources :orders, only: [:new,:create,:index,:show]
     delete 'cart_items/all_destroy' => 'cart_items#all_destroy', as: 'all_destroy'

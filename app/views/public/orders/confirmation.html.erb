@@ -15,17 +15,17 @@
           <% @cart_items.each do |cart| %>
             <tr>
               <td class="text-left">
-                <%= attachment_image_tag( cart.item, :image, size: "60x50") %>
+                <%= image_tag cart.item.get_image(60,60) %>
                 <%= cart.item.name %>
               </td>
               <td class="text-right">
-                ¥<%= cart.item.tax_in_price.to_s(:delimited) %>
+                ¥<%= cart.item.with_tax_price %>
               </td>
               <td class="text-right">
-                  <%= cart.count %>
+                  <%= cart.quantity %>
               </td>
               <td class="text-right">
-                ¥<%= sub_price(cart).to_s(:delimited) %>
+                ¥<%= cart.subtotal %>
               </td>
             </tr>
         <% end %>
@@ -37,15 +37,15 @@
       <table class="table">
           <tr>
             <th>送料</th>
-            <td class="text-right col-xs-5">¥<%= @order.postage %></td>
+            <td class="text-right col-xs-5">¥800></td>
           </tr>
           <tr>
             <th class="info">商品合計</th>
-            <td class="text-right">¥<%= total_price(@cart_items).to_s(:delimited) %></td>
+            <td class="text-right">¥<%= @total %></td>
           </tr>
           <tr>
             <th class="info">請求金額</th>
-            <td class="text-right">¥<%= billing(@order).to_s(:delimited) %></td>
+            <td class="text-right">¥<%= @order.total_payment %></td>
           </tr>
       </table>
     </div>

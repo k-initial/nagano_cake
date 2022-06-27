@@ -1,5 +1,6 @@
 
 <div class="container">
+  <% if @cart_items.present? %>
   <div class="row">
     <div class="col-md-4 text-left">
       <h3>ショッピングカート</h3>
@@ -38,9 +39,14 @@
           </tr>
         </tbody>
          <% end %>
+         <% else %>
+         <div>
+           <h4>カートの中に商品がありません</h4>
+         </div>
       </table>
     </div>
   </div>
+  <% end %>
   <div class="row mt-5">
     <div class="col-md-4">
       <p><%= link_to "買い物を続ける", root_path, class: "btn btn-primary"%></p>

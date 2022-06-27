@@ -1,4 +1,5 @@
 class Public::CustomersController < ApplicationController
+   before_action :authenticate_customer!
   def show
     @customer = current_customer
   end
@@ -21,15 +22,16 @@ class Public::CustomersController < ApplicationController
 
   def withdraw
     @customer = current_customer
-    @customer.update(is_deleted: true)
+    @customer.update(is_delete: true)
     reset_session
-    flash[:notice] = "ご注文ありがとうございました！"
+    flash[:notice] = "退会処理を完了しました"
     redirect_to root_path
   end
   
   private
   
   def customer_params
-    params.require(:customer).permit(:last_name, :first_name, :first_name_kana, :last_name_kana, :email, :post_code, :address, :phone_number)
+    params.permit(Customer.attribute_names)
+    # params.require(:customer).permit(:last_name, :first_name, :first_name_kana, :last_name_kana, :email, :post_code, :address, :phone_number,:is_delete)
   end
 end

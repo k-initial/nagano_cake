@@ -32,7 +32,7 @@ class Customer < ApplicationRecord
          
   has_many :cart_items, dependent: :destroy
   has_many :orders, dependent: :destroy
-  has_many :addresses, dependent: :destroy
+  has_many :shopping_addresses, dependent: :destroy
   
 
 
@@ -49,7 +49,7 @@ class Customer < ApplicationRecord
     self.first_name + "" + self.last_name
   end
   
-  # def active_for_authentication?
-  #   super && (self.is_deleted == falsse)
-  # end
+  def active_for_authentication?
+    super && (self.is_delete == false)
+  end
 end
