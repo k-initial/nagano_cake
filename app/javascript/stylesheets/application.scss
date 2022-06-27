@@ -5,8 +5,8 @@
     margin-left: 200px;
 }
 .top-image {
-    width: 100%;
-    height: 500px;
+    width: 300px;
+    height: 400px;
     object-fit: cover;
 }
 
@@ -58,7 +58,19 @@
         width: 79%;
     }
 }
-
 .item-title {
+    background-color: pink;
+}
+
+// footer {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 80px;
+//   background-color: pink;
+// }
+
+.shadow-sm {
     background-color: pink;
 }
