@@ -18,7 +18,7 @@ admins.each do |admin|
   admin_data = Admin.find_by(email: admin[:email])
   # 該当ユーザーがいなければ、createする
   if admin_data.nil?
-    User.create(
+    Admin.create(
       email: admin[:email],
       password: admin[:password]
     )

@@ -7,7 +7,8 @@
         <th>購入日時</th>
         <th>購入者</th>
         <th>注文個数</th>
-      </tr>      
+      </tr>
+     </thead>
       <tbody>
         <% @orders.each do |order| %>
         <tr>
@@ -17,13 +18,13 @@
             <% end %>
           </td>
           <td>
-            <th><%= @order.customer.full_name %></th>
+            <%= order.customer.full_name %>
           </td>
-          <td><%= @order.order_details.quantity%></td>
+          <td><%= order.order_details.sum(:quantity) %></td>
         </tr>
         <% end %>
       </tbody>
-    </thead>
+   
   </table>
    <div class="d-flex justify-content-center"><%= paginate(@orders)%></div>
 </div>

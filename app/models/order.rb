@@ -15,6 +15,7 @@
 #  customer_id    :integer
 #
 class Order < ApplicationRecord
+    
   belongs_to :customer
 	  has_many :order_details, dependent: :destroy
 	
@@ -22,4 +23,8 @@ class Order < ApplicationRecord
 	  validates :post_code, length: {is: 7}, numericality: { only_integer: true }
     
     enum payment_method: {"クレジットカード": 0, "銀行振込": 1}
+    
+    def full_address
+        self.post_code + "" + self.address
+    end
 end
