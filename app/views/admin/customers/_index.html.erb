@@ -15,13 +15,13 @@
           <%= customer.id %>
         </td>
         <td class="text-left">
-          <%= link_to @customer.full_name,admin_customer_path(customer) %>
+          <%= link_to customer.full_name,admin_customer_path(customer) %>
         </td>
         <td class="text-left">
           <%= customer.email %>
         </td>
         <td class="col-xs-2">
-          <% if customer.is_delet == true%>
+          <% if customer.is_delete == true%>
             <p class="text-secondary">退会済</p>
           <% else %>
             <p class="text-success">有効</p>
