@@ -17,9 +17,9 @@
             <% end %>
           </td>
           <td>
-            <th><%= order.customer.full_name %></th>
+            <th><%= @order.customer.full_name %></th>
           </td>
-          <td><%= order.order_details.count%></td>
+          <td><%= @order.order_details.quantity%></td>
         </tr>
         <% end %>
       </tbody>
