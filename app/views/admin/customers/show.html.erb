@@ -1,6 +1,6 @@
 <% provide(:title, "会員情報詳細") %>
 <div class="container">
-  <h2 class="mt-5 text-center"><%= full_name(@customer)%>さんの会員詳細</h2>
+  <h2 class="mt-5 text-center"><%= current_customer.full_name%>さんの会員詳細</h2>
     <div class="row m-5">
       <div class="col-10 offset-1">
           <table class="table">
@@ -10,13 +10,13 @@
             </tr>
             <tr>
               <th class="text-center">氏名</th>
-              <td><%= @first_name %></td>
-              <td><%= @last_name %></td>
+              <td><%= @customer.first_name %></td>
+              <td><%= @customer.last_name %></td>
             </tr>
             <tr>
               <th class="text-center">フリガナ</th>
-              <td><%= @first_name_kana %></td>
-              <td><%= @last_name_kana %></td>
+              <td><%= @customer.first_name_kana %></td>
+              <td><%= @customer.last_name_kana %></td>
             </tr>
             <tr>
               <th class="text-center">郵便番号</th>
