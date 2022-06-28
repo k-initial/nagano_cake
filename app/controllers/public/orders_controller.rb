@@ -15,6 +15,7 @@ class Public::OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @order_name = current_customer
     @addresses = current_customer.shopping_addresses
   end
 
