@@ -1,7 +1,7 @@
 class Admin::OrdersController < ApplicationController
  before_action :authenticate_admin!
   def index
-   pp @orders = Order.all.page(params[:page]).per(10)
+    @orders = Order.page(params[:page]).per(10)
   end
   
   def show
