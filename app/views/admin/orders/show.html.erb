@@ -1,2 +1,25 @@
-<h1>Admin::Orders#show</h1>
-<p>Find me in app/views/admin/orders/show.html.erb</p>
+<% provide(:title, "注文詳細") %>
+<div class="container">
+  <h2 class="my-5 text-center">注文履歴詳細</h2>
+  <div class="row justify-content-center">
+    <div class="col-xs-12">　
+      <table class="table table-borderless">
+         <thead>
+            <tr><th>購入者</th><td><%= @order.customer.first_name %> <%= @order.customer.last_name %></td></tr>
+            <tr><th>注文日</th><td><%= @order.created_at.strftime("%Y-%m-%d %H:%M:%S")%></td></tr>
+            <tr><th>配送先</th><td>〒<%= @order.full_address %></td></tr>
+            <tr><th>支払方法</th><td><%= @order.payment_method %></td></tr>
+            <tr>
+              <td>
+                <%= form_with(model: @order, url: admin_order_path, method: :patch, local: true) do |f| %>
+                <%#= f.select :status, Order.statuses.keys,class:"status"%>
+                <%= f.submit '更新', class:"btn btn-sm btn-success" %>
+                <% end %>
+              </td>
+           </tr>
+         </thead>
+     </table>
+    </div>
+  </div>
+  
+</div>
